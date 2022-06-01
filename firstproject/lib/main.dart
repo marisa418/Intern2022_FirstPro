@@ -1,4 +1,3 @@
-import 'package:firstproject/page/image.dart';
 import 'package:firstproject/page/page_create.dart';
 import 'package:firstproject/page/page_show.dart';
 import 'package:firstproject/provider/transaction_provider.dart';
@@ -25,7 +24,6 @@ class MyApp extends StatelessWidget {
           routes: {
             '/': (context) => const MyHomePage(),
             '/createform': (context) => CreateForm(),
-            '/addimage': (context) => addimage(),
           },
           initialRoute: "/",
         ));

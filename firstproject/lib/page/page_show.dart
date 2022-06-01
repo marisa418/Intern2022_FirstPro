@@ -94,12 +94,11 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.pushNamed(context, '/createform');
             },
-            child: SizedBox(child: const Icon(Icons.add)),
-            backgroundColor: Color.fromARGB(255, 15, 11, 231),
+            child: const SizedBox(child: Icon(Icons.add)),
+            backgroundColor: const Color.fromARGB(255, 15, 11, 231),
           ),
         ),
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
@@ -155,7 +154,7 @@ class Detail extends State<ShowDetail> {
                                 fit: BoxFit.cover)
                             : const Text(''),
                       ),
-                      Padding(padding: EdgeInsets.only(left: 20)),
+                      const Padding(padding: EdgeInsets.only(left: 20)),
                       Expanded(
                         flex: 1,
                         child: Column(
@@ -163,22 +162,22 @@ class Detail extends State<ShowDetail> {
                             Text(
                               point.toStringAsFixed(0),
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 25,
                                   color: Colors.orange),
                             ),
-                            Text(
+                            const Text(
                               "ให้คะแนน",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20),
                             ),
                             InkWell(
-                              child: SizedBox(
+                              child: const SizedBox(
                                   height: 100,
                                   width: 100,
                                   child: FittedBox(
-                                      child: const Icon(
+                                      child: Icon(
                                     Icons.star,
                                     color: Colors.red,
                                   ))),
@@ -189,108 +188,80 @@ class Detail extends State<ShowDetail> {
                                 });
                               },
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  data.sf_name,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20),
-                                ),
-                                Padding(padding: EdgeInsets.only(left: 20)),
-                                Text(
-                                  data.sl_name,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20),
-                                )
-                              ],
+                            Text(
+                              data.sf_name + "  " + data.sl_name,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20),
                             ),
                           ],
                         ),
                       )
                     ],
                   ),
-                  const Padding(padding: EdgeInsets.only(top: 10)),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Text(
-                        "ข้อมูลนักเรียน",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 22),
-                      ),
-                      Text(
-                        "โรงเรียน: " + data.school,
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      Text(
-                        "รหัสนักเรียน: " + data.std_id,
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      Text(
-                        "ระดับการศึกษา: " + data.sgrade,
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      Text(
-                        "ครูที่ปรึกษา: " + data.teacher,
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            "ชื่อ: " + data.sf_name,
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          Padding(padding: EdgeInsets.only(left: 10)),
-                          Text(
-                            data.sl_name,
-                            style: TextStyle(fontSize: 20),
-                          )
-                        ],
-                      ),
-                      Text(
-                        "ชื่อเล่น: " + data.sn_name,
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      Text(
-                        "อายุ: " + data.sage.toString(),
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "ข้อมูลผู้ปกครอง",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 22),
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            "ชื่อ: " + data.pf_name,
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          Padding(padding: EdgeInsets.only(left: 10)),
-                          Text(
-                            data.pl_name,
-                            style: TextStyle(fontSize: 20),
-                          )
-                        ],
-                      ),
-                      Text(
-                        "ความสัมพันธ์: " + data.prelation,
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      Text(
-                        "เบอร์โทร: " + data.ptel,
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 40),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        const Text(
+                          "ข้อมูลนักเรียน",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 22),
+                        ),
+                        Text(
+                          "โรงเรียน: " + data.school,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "รหัสนักเรียน: " + data.std_id,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "ระดับการศึกษา: " + data.sgrade,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "ครูที่ปรึกษา: " + data.teacher,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "ชื่อ: " + data.sf_name + "  " + data.sl_name,
+                          style: const TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "ชื่อเล่น: " + data.sn_name,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "อายุ: " + data.sage.toString(),
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const Text(
+                          "ข้อมูลผู้ปกครอง",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 22),
+                        ),
+                        Text(
+                          "ชื่อ: " + data.pf_name + "  " + data.pl_name,
+                          style: const TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "ความสัมพันธ์: " + data.prelation,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          "เบอร์โทร: " + data.ptel,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -315,7 +286,7 @@ class Detail extends State<ShowDetail> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        const Icon(Icons.arrow_left, color: Colors.white),
+                        Icon(Icons.arrow_left, color: Colors.white),
                         Text(
                           'ย้อนกลับ',
                           style: TextStyle(
